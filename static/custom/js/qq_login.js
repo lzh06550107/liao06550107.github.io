@@ -95,7 +95,8 @@ var Request = new Object();
 Request = GetRequest(); //获取请求参数
 
 if(Request['code']){ //如果存在授权码，则通过Authorization Code获取Access Token
-	getAccessTokenByAuthorizationCode_acrossDomain(Request['code']);
+	//getAccessTokenByAuthorizationCode_acrossDomain(Request['code']);
+	getAccessTokenByAuthorizationCode(Request['code']);
 }
 
 $(document).ready(function(){
