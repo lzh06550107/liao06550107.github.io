@@ -73,7 +73,7 @@ function getAccessTokenByAuthorizationCode_acrossDomain(authorizationCode){
     ifrproxy.style.display = 'none';
     ifrproxy.src = url;    // 注意该文件在"a.com"域下
 	ifrproxy.onload = function(){
-		this.src = '../about.html';
+		this.src = 'http://lzh06550107.github.io/about.html';
 		this.onload = function(){
 			return window.location.hash;
 		};
