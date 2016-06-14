@@ -75,7 +75,7 @@ function getAccessTokenByAuthorizationCode_acrossDomain(authorizationCode){
 	ifrproxy.onload = function(){
 		this.src = 'http://lzh06550107.github.io/about/';
 		this.onload = function(){
-			var accessToken = getQueryString(window.frames[0].location.hash.substr(1),'Access_Token');
+			var accessToken = getQueryString(ifrproxy.contentWindow.location.hash.substr(1),'Access_Token');
 			if(accessToken){ //如果存在访问令牌，则使用Access Token来获取用户的OpenID
 				getOpenIdByAccessToken(accessToken);
 			}	
