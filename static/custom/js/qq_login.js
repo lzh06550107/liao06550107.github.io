@@ -73,7 +73,7 @@ function getAccessTokenByAuthorizationCode_acrossDomain(authorizationCode){
     ifrproxy.style.display = 'none';
     ifrproxy.src = url;    // 注意该文件在"a.com"域下
 	ifrproxy.onload = function(){
-		this.src = 'http://lzh06550107.github.io/about.html';
+		this.src = 'http://lzh06550107.github.io/about/';
 		this.onload = function(){
 			var accessToken = getQueryString(window.location.hash.substr(1),'Access_Token');
 			if(accessToken){ //如果存在访问令牌，则使用Access Token来获取用户的OpenID
