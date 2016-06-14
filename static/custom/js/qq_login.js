@@ -57,7 +57,7 @@ function getOpenIdByAccessToken(accessToken){
 var appID = "101322571";
 var appKEY = "350fc5fa05862fa9c1716f78a264fddb";
 //成功授权后的回调地址，请改为你自己的
-var redirectURI = "http://lzh06550107.github.io/";
+var redirectURI = "http://lzh06550107.github.io";
 var state= 'test'; //设置状态值
 var Request = new Object(); 
 Request = GetRequest(); //获取请求参数
