@@ -1,0 +1,12 @@
+<!--引入通用组件的js脚本-->
+<script src='{{"/static/jquery/jquery-2.2.4.min.js"| prepend: site.baseurl }}' type='text/javascript'></script>
+<script src='{{"/static/jquery/jquery-migrate-1.4.1.min.js"| prepend: site.baseurl }}' type='text/javascript'></script>
+<script src='{{"/static/bootstrap/js/bootstrap.min.js"| prepend: site.baseurl }}' type='text/javascript'></script>
+<script src='{{"/static/modernizr/modernizr.min.js"| prepend: site.baseurl }}'   type='text/javascript'></script>
+<script src='{{"/static/custom/js/share_common.js"| prepend: site.baseurl }}'   type='text/javascript'></script>
+<!--引入特定组件的js脚本-->
+{% assign jses = layout.js_from_layout | split: "," %}
+{% for js in jses %}
+<script src='{{ js | prepend: site.baseurl }}' type='text/javascript'></script>
+{% endfor %}
+

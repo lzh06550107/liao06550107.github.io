@@ -1,0 +1,76 @@
+<!-- 分页链接 -->
+{% if paginator.total_pages > 1 %}
+<nav>
+	<ul class="pagination">
+		<li {% if paginator.page == 1 %} class="disabled" {% endif %}>
+			<a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: 'page:num', '' }}" >
+				<span>首页</span>
+			</a>
+		</li>
+		
+		<li {% if paginator.previous_page %}{%else%} class="disapbled" {% endif %}>		
+			<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" >
+				<span >&laquo; Prev<span>
+			</a>
+		</li>
+		
+		<!--必须限制每页显示的数量，为此需要计算当前页码为中心时开始页码和结束页码的数字
+			假设每页显示9个页码，则开始页码为5，结束页码为13。但是可能存在以下边界问题
+			1.总的页面不足show_size(需要显示页码数)个时,这是需要全部显示；(页码从1开始计数)即start(起始显示页码数)=1, end(结束显示页码数)=total_size(总的页码数)
+			2.通过current_size(当前页码数)-(show_size-1)/2时，得到小于1时，则需要调整开始页码为1；即 start=1,同时end=show_size
+			3.通过current_size+(show_size-1)/2时，得到大于实际的页面总数，则需要调整结束页码为页面总数，即end=total_size，同时调整开始页码,即start=end+1-show_size;
+		-->
+		
+			{% assign show_size = 5 %}
+			{% assign current_size = paginator.page %}
+			{% assign total_size = paginator.total_pages %}
+			{% assign space = show_size|minus:1|divided_by:2 %}
+			
+			{% if show_size >= total_size %}
+				{% assign start = 1 %}{% assign end = total_size %}
+			{% else %}
+				{% assign start = current_size |minus:space %}
+				{% assign end = current_size |plus:space %}
+				<!--当显示的页面数为偶数时，向右边需要补足1个-->
+				{% assign mod = show_size | modulo: 2 %}
+				{% if mod == 0 %}
+					{% assign end = end|plus:1 %}
+				{% endif %}
+				{% if start <1 %}
+					{% assign start = 1 %}{% assign end = show_size %}
+				{% elsif end > total_size %}
+					{% assign end = total_size %}{% assign start = end|plus:1|minus:show_size %}
+				{% endif %}
+			{% endif %}
+			
+			
+		  {% for page in (start..end) %}
+		  <li {% if page == paginator.page %} class="active " {% endif %}>
+			{% if page == paginator.page %}
+			<a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}" >
+				<span >{{ page }}</span>
+			</a>
+			{% elsif page == 1 %}
+			  <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: 'page:num', '' }}">{{ page }}</a>
+			{% else %}
+			  <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+			{% endif %}
+		</li>
+		  {% endfor %}
+		  
+	
+			
+		<li {% if paginator.next_page %}{%else%} class="disabled" {% endif %}>
+			<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"><span  >Next &raquo;</span></a>
+        </li>
+		
+		<li {% if paginator.next_page %}{%else%} class="disabled" {% endif %}>
+		<a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', paginator.total_pages }}" ><span >末页</span></a>
+		</li>
+		
+		<li class="disabled">
+			<span>第{{paginator.page}}页 / 共{{paginator.total_pages}}页</span>
+		</li>
+	</ul>
+</nav>
+{% endif %}

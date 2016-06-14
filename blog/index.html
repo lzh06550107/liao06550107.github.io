@@ -1,0 +1,59 @@
+---
+layout: post_item
+title: 博客
+order: 1
+---
+	
+<!-- header logo wrapper -->
+<div id="post_list_header_logo_wrapper" class="clearfix">
+	<h1 id="post_list_heading" class="pull-left fa fa-list fa-2x">博客列表</h1>
+	
+	<!--弹出右边栏-->
+	<div id="user_info_icon" class="pull-right">
+		<a  class="user_info_button" href="javascript:void(0);">
+			<i class="fa fa-expand"></i>
+		</a>
+	</div>
+</div>
+<!-- header logo wrapper -->
+
+<!-- post list content -->
+<div id="post_list_content">
+	<ul class="list-group">
+	{% for post in paginator.posts %}
+	  <li class="list-group-item">
+		<!--<div class="post_thumbnail_wrapper">
+			<div class="blog_post_banner blog_post_image">
+				<a href="https://ahmad.works/writing/restaurant-employer-read-clients-orders-on-his-ipad/" title="Restaurant Employer Read Clients Orders On His iPad"><img width="940" height="400" src="https://awcdn1.ahmad.works/writing/wp-content/uploads/2015/05/Resturant-Employer-940x400.jpg" class="img-responsive wp-post-image" alt="Resturant-Employer" /></a>
+			</div>
+        </div>-->
+		
+		<h2>
+			
+			<a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a><span class="pull-right"><i class="fa fa-html5"></i></span>
+		</h2>
+		
+		<div id="blog_post_meta">
+			<span><i class="fa fa-user"></i>&nbsp;By <a href="http://www.buzzblog.hercules-design.com/author/admin/" title="Posts by admin" rel="author">admin</a></span>
+			<span><i class="fa fa-calendar"></i><font color="blue">&nbsp;{{ post.date | date: "%b %-d, %Y" }}</font></span>
+			<span><i class="fa fa-comment-o"></i> <a href="http://www.buzzblog.hercules-design.com/hello-world-2-3/#comments" class="comments-link" >1</a></span>
+			<span><i class="fa fa-tag"></i><a href="http://www.buzzblog.hercules-design.com/tag/music/" rel="tag">&nbsp;Music</a>, <a href="http://www.buzzblog.hercules-design.com/tag/programming/" rel="tag">&nbsp;Programming</a>
+			</span>
+			<span><i class="fa fa-heart"></i><a href="#" class="zilla-likes active" id="zilla-likes-2051" title="You already like this">&nbsp;1322</a></span>
+		</div>
+		
+		<div class="blog_post_description">
+            <p>It’s no secret that the digital industry is booming. From exciting startups to global brands, companies are reaching out to digital agencies, responding to 
+				<a href="{{ post.url | prepend: site.baseurl }}" class="more_link more_link_dots"> &hellip; </a>
+			</p>
+        </div>
+		
+		<div id="post_list_bottom">
+			{% include share.html%}
+		</div>
+	  </li>
+	{% endfor %}
+	</ul>
+</div>
+
+

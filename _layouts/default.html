@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  
+  <body>
+	<div class="container-fluid">
+		{% if layout.header %}
+		<div id="header" class="row">
+			<div class="container">
+				{% include header.html %}
+			</div>
+		</div>
+		{% endif %}
+		<div id="page-content" class="row">
+			{{ content }}
+		</div>
+		{% if layout.footer %}
+		<div id= "footer" class="row">
+			<div class="container">
+				{% include footer.html %}
+			</div>
+		</div>
+		{% endif %}
+	</div>
+	
+	 {% include foot.html %}
+	 
+  </body>
+
+</html>

@@ -1,0 +1,1 @@
+hljs.initHighlightingOnLoad(); //本身就是把高亮函数与导入事件绑定

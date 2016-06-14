@@ -1,0 +1,21 @@
+<!-- 分页链接 -->
+{% if paginator.total_pages > 1 %}
+<div>
+	<ul class="pagination" id="pagination"></ul>
+</div>
+
+<script type="text/javascript">
+	window.onload = function(){
+		loadpage(
+			{{paginator.total_pages}},
+			5,
+			{{paginator.page}},
+			"{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: 'page:num', '' }}",
+			"{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}",
+			"{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}",
+			"{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', paginator.total_pages }}",
+			"{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', paginator.page }}"
+			);
+	};
+</script>
+{% endif %}

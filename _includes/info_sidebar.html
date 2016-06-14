@@ -1,0 +1,115 @@
+<div class="site_side_container">
+    <h3 class="sr-only">Sliding Sidebar</h3>
+    <div class="info_sidebar">
+        <!--搜索组件-->
+        <div id="search" class="widget_container clearfix">
+            <form role="search" class="form-inline" method="get" action="https://ahmad.works/writing/">
+                <div class="form-group">
+                    <label class="sr-only">Search for:</label>
+					<div class="input-group">
+						<div class="input-group-addon"><i class="fa fa-search"></i></div>
+						<input type="search" class="form-control" placeholder="Search ..." value="" name="s" title="Search for:">
+					</div>
+                </div>
+                <input type="submit" class="btn btn-default" value="查找">
+            </form>
+        </div>
+        <!--关于我组件-->
+        <div id="about" class="widget_container clearfix">
+            <h4 class="widget_title">
+				<span class="page_header_title">About Me</span>
+			</h4>
+            <div class="asalah_about_me">
+                <div class="">
+                    <img class="img-responsive img-thumbnail" src="/static/images/Author.png" alt="About Me"/>
+				</div>
+                <div class="author_text_introduction">
+					<p class="text-justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                    diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                    At vero eos et accusam.
+					</p>
+				</div>
+            </div>
+        </div>
+        <!--社交账号-->
+        <div id="social" class="widget_container postprofile clearfix">
+            <h4 class="widget_title">
+                <span class="page_header_title">Social Profiles</span>
+            </h4>		
+			
+			<ul class="social">
+				<li><a href="http://twitter.com" class="twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+				<li><a href="http://facebook.com" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+				<li><a href="http://github.com" class="github" target="_blank"><i class="fa fa-github-alt"></i></a></li>
+				<li><a href="http://youtube.com" class="youtube" target="_blank"><i class="fa fa-youtube"></i></a></li>
+				<li><a href="http://dribbble.com" class="dribbble" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+				<li><a href="#" class="behance" target="_blank"><i class="fa fa-behance"></i></a></li>
+				<li><a href="#" class="vimeo-square" target="_blank"><i class="fa fa-vimeo-square"></i></a></li>
+				<li><a href="#" class="vk" target="_blank"><i class="fa fa-vk"></i></a></li>
+				<li><a href="#" class="vine" target="_blank"><i class="fa fa-vine"></i></a></li>
+				<li><a href="#" class="digg" target="_blank"><i class="fa fa-digg"></i></a></li>
+				<li><a href="#" class="skype" target="_blank"><i class="fa fa-skype"></i></a></li>
+				<li><a href="http://google.com/plus" class="googleplus" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+				<li><a href="http://instagram.com" class="instagram" target="_blank"><i class="fa fa-instagram"></i></a></li>
+				<li><a href="http://linkedin.com" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+				<li><a href="http://astro-wp.ecko.me/feed/" class="rss" target="_blank"><i class="fa fa-rss"></i></a></li>
+				<li><a href="#" class="pinterest" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+				<li><a href="#" class="bitbucket" target="_blank"><i class="fa fa-bitbucket"></i></a></li>
+				<li><a href="#" class="stack-overflow" target="_blank"><i class="fa fa-stack-overflow"></i></a></li>
+				<li><a href="#" class="renren" target="_blank"><i class="fa fa-renren"></i></a></li>
+				<li><a href="#" class="flickr" target="_blank"><i class="fa fa-flickr"></i></a></li>
+				<li><a href="#" class="soundcloud" target="_blank"><i class="fa fa-soundcloud"></i></a></li>
+				<li><a href="#" class="steam" target="_blank"><i class="fa fa-steam"></i></a></li>
+				<li><a href="#" class="qq" target="_blank"><i class="fa fa-qq"></i></a></li>
+				<li><a href="#" class="slideshare" target="_blank"><i class="fa fa-slideshare"></i></a></li>
+			</ul>
+
+        </div>
+
+        <!--相关的帖子-->
+        <div id="relation-postlist" class="widget_container clearfix">
+            <h4 class="widget_title">
+				<span class="page_header_title">Relation Posts</span>
+			</h4>
+            <div class="relation_post_list_widget">
+			{% if site.related_posts %}
+                <ul class="post_list">
+				{% for post in site.related_posts limit:5 %}
+                    <li class="post_item clearfix">
+                        <div class="post_info_wrapper">
+                            <span class="title post_title pull-left">
+                                <a href="{{ post.url | prepend: site.baseurl }}"
+                                   title="{{post.title}}">{{ post.title }}</a>
+                            </span>
+                            <span class="date pull-right">{{ post.date | date: "%b %-d, %Y" }}</span>
+                        </div>
+                    </li>
+					{% endfor%}
+                </ul>
+			{% endif%}
+            </div>
+        </div>
+
+        <!--最近的帖子-->
+        <div id="recent-postlist" class="widget_container clearfix">
+            <h4 class="widget_title"><span class="page_header_title">Recent Posts</span></h4>
+            <div class="asalah_post_list_widget">
+			{% if site.posts %}
+                <ul class="post_list">
+				{% for post in site.posts limit:5 %}
+                    <li class="post_item clearfix">
+                        <div class="post_info_wrapper">
+                            <span class="title post_title">
+                                <a href="{{ post.url | prepend: site.baseurl }}"
+                                   title="{{post.title}}">{{post.title}}</a>
+                            </span>
+                            <span class="date pull-right">{{ post.date | date: "%b %-d, %Y" }}</span>
+                        </div>
+                    </li>
+				{% endfor %}
+                </ul>
+			{% endif%}
+            </div>
+        </div>
+    </div>
+</div>

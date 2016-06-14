@@ -1,0 +1,49 @@
+---
+layout: default
+header: true #不包含default模板中的header头
+footer: true #包含default模板中的footer尾
+css_from_layout: "/static/custom/css/post.css,/static/custom/css/post_list.css,/static/custom/css/side_bar.css" #该模板中需要另外包含的css头
+js_from_layout: "/static/custom/js/share2.js,/static/custom/js/post.js,/static/toc/jquery.tableofcontents.min.js"
+---
+
+<div class="container">
+	<div class="row">
+		<div id="content" class="col-md-8 clearfix post-content">
+			<div id="post_list_conent_wrapper" class="text-justify">
+					<h1 id="title" class="text-center">{{page.title}}</h1>
+				{{ content }}		
+			</div>
+			
+			<div id="post_list_paginate">
+				<!--引入共享组件-->
+				{% include share.html %}
+				<hr/>
+				<!--引入导航组件-->
+				<nav>
+				  <ul class="pager">
+				  
+				  {% if page.previous %}
+					<li class="previous"><a href="{{page.previous.url | prepend: site.baseurl}}" title="{{ page.previous.title }}">&larr; Previous</a></li>
+					<h5 class="pull-left text-left"><a href="{{page.previous.url | prepend: site.baseurl}}">{{page.previous.title}}</a></h5>
+				  {% else %}
+					<li class="previous disabled"><a>&larr; Previous</a></li>
+				  {% endif %}
+				  {% if page.next %}
+					<li class="next"><a href="{{page.next.url | prepend: site.baseurl}}" title="{{ page.next.title }}">Next &rarr;</a></li>
+					<h5 class="pull-right text-right"><a href="{{page.next.url | prepend: site.baseurl}}">{{ page.next.title }}</a></h5>
+				  {% else %}
+					<li class="next disabled"><a>Next &rarr;</a>
+				  {% endif %}
+				  
+				  </ul>
+				</nav>
+				
+			</div>
+		</div>
+		<div id="sidebar" class="col-md-4">
+			{% include info_sidebar.html %}
+		</div>
+	</div>
+</div>
+
+

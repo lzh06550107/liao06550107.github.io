@@ -1,0 +1,480 @@
+
+/* --------
+start sidebar widgets
+------------------------------------------- */
+.widget_container {
+	margin-top: 20px;
+	padding-top: 40px
+	font-size: 14px;
+	line-height: 23px;
+}
+
+.widget_container h4 {
+	margin-bottom: 20px;
+}
+
+.widget_container p {
+	margin-top: 10px;
+}
+
+.widget_container:last-child {
+	margin-bottom: 0;
+}
+
+.widget_container .widget_title {
+	margin-top: -4px;
+	margin-bottom: 19px;
+	border-radius: 30px;
+	font-size: 19px;
+	position: relative;
+}
+
+.widget_container ul {
+	padding: 0;
+	list-style: none;
+	margin: 0;
+}
+
+/* --------
+end sidebar widgets
+------------------------------------------- */
+
+.postprofile .social {
+
+    list-style: none;
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+    -webkit-transform: translateZ(0)
+}
+
+.postprofile ul {
+    margin: 0 10px 10px 0
+}
+
+.postprofile li {
+    float: left;
+    margin: 0 10px 10px 0;
+    padding: 0
+}
+
+.postprofile li a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+    text-align: center;
+    color: #fff;
+    border-radius: 40px
+}
+
+.postprofile li a i {
+    vertical-align: -9px
+}
+
+@media screen and (max-width: 320px) {
+    .postprofile .author {
+        float: none;
+        width: 25%
+    }
+
+    .postprofile .info {
+        float: none;
+        width: 100%
+    }
+}
+
+.author .postprofile {
+    margin-top: 15px;
+    padding: 15px 0 50px;
+    border-top: 0;
+    border-bottom: 2px solid #e9e9e9
+}
+
+.social .twitter {
+    -webkit-box-shadow: inset 0 0 0 20px #55acee;
+    box-shadow: inset 0 0 0 20px #55acee
+}
+
+.social .twitter:hover {
+    color: #55acee;
+    -webkit-box-shadow: inset 0 0 0 2px #55acee;
+    box-shadow: inset 0 0 0 2px #55acee
+}
+
+.social .facebook {
+    -webkit-box-shadow: inset 0 0 0 20px #3b5998;
+    box-shadow: inset 0 0 0 20px #3b5998
+}
+
+.social .facebook:hover {
+    color: #3b5998;
+    -webkit-box-shadow: inset 0 0 0 2px #3b5998;
+    box-shadow: inset 0 0 0 2px #3b5998
+}
+
+.social .github {
+    -webkit-box-shadow: inset 0 0 0 20px #333;
+    box-shadow: inset 0 0 0 20px #333
+}
+
+.social .github:hover {
+    color: #333;
+    -webkit-box-shadow: inset 0 0 0 2px #333;
+    box-shadow: inset 0 0 0 2px #333
+}
+
+.social .behance {
+    -webkit-box-shadow: inset 0 0 0 20px #aaa;
+    box-shadow: inset 0 0 0 20px #333
+}
+
+.social .behance:hover {
+    color: #333;
+    -webkit-box-shadow: inset 0 0 0 2px #333;
+    box-shadow: inset 0 0 0 2px #333
+}
+
+.social .vimeo-square {
+    -webkit-box-shadow: inset 0 0 0 20px #333;
+    box-shadow: inset 0 0 0 20px #333
+}
+
+.social .vimeo-square:hover {
+    color: #333;
+    -webkit-box-shadow: inset 0 0 0 2px #333;
+    box-shadow: inset 0 0 0 2px #333
+}
+
+.social .vk {
+    -webkit-box-shadow: inset 0 0 0 20px #333;
+    box-shadow: inset 0 0 0 20px #333
+}
+
+.social .vk:hover {
+    color: #333;
+    -webkit-box-shadow: inset 0 0 0 2px #333;
+    box-shadow: inset 0 0 0 2px #333
+}
+
+.social .vine {
+    -webkit-box-shadow: inset 0 0 0 20px #333;
+    box-shadow: inset 0 0 0 20px #333
+}
+
+.social .vine:hover {
+    color: #333;
+    -webkit-box-shadow: inset 0 0 0 2px #333;
+    box-shadow: inset 0 0 0 2px #333
+}
+
+.social .digg {
+    -webkit-box-shadow: inset 0 0 0 20px #333;
+    box-shadow: inset 0 0 0 20px #333
+}
+
+.social .digg:hover {
+    color: #333;
+    -webkit-box-shadow: inset 0 0 0 2px #333;
+    box-shadow: inset 0 0 0 2px #333
+}
+
+.social .skype {
+    -webkit-box-shadow: inset 0 0 0 20px #333;
+    box-shadow: inset 0 0 0 20px #333
+}
+
+.social .skype:hover {
+    color: #333;
+    -webkit-box-shadow: inset 0 0 0 2px #333;
+    box-shadow: inset 0 0 0 2px #333
+}
+
+.social .vk {
+    -webkit-box-shadow: inset 0 0 0 20px #333;
+    box-shadow: inset 0 0 0 20px #333
+}
+
+.social .vk:hover {
+    color: #333;
+    -webkit-box-shadow: inset 0 0 0 2px #333;
+    box-shadow: inset 0 0 0 2px #333
+}
+
+.social .rss {
+    -webkit-box-shadow: inset 0 0 0 20px #ee802f;
+    box-shadow: inset 0 0 0 20px #ee802f
+}
+
+.social .rss:hover {
+    color: #ee802f;
+    -webkit-box-shadow: inset 0 0 0 2px #ee802f;
+    box-shadow: inset 0 0 0 2px #ee802f
+}
+
+.social .youtube {
+    -webkit-box-shadow: inset 0 0 0 20px #c4302b;
+    box-shadow: inset 0 0 0 20px #c4302b
+}
+
+.social .youtube:hover {
+    color: #c4302b;
+    -webkit-box-shadow: inset 0 0 0 2px #c4302b;
+    box-shadow: inset 0 0 0 2px #c4302b
+}
+
+.social .dribbble {
+    -webkit-box-shadow: inset 0 0 0 20px #ea4c89;
+    box-shadow: inset 0 0 0 20px #ea4c89
+}
+
+.social .dribbble:hover {
+    color: #ea4c89;
+    -webkit-box-shadow: inset 0 0 0 2px #ea4c89;
+    box-shadow: inset 0 0 0 2px #ea4c89
+}
+
+.social .googleplus {
+    -webkit-box-shadow: inset 0 0 0 20px #dd4b39;
+    box-shadow: inset 0 0 0 20px #dd4b39
+}
+
+.social .googleplus:hover {
+    color: #dd4b39;
+    -webkit-box-shadow: inset 0 0 0 2px #dd4b39;
+    box-shadow: inset 0 0 0 2px #dd4b39
+}
+
+.social .instagram {
+    -webkit-box-shadow: inset 0 0 0 20px #3f729b;
+    box-shadow: inset 0 0 0 20px #3f729b
+}
+
+.social .instagram:hover {
+    color: #3f729b;
+    -webkit-box-shadow: inset 0 0 0 2px #3f729b;
+    box-shadow: inset 0 0 0 2px #3f729b
+}
+
+.social .linkedin {
+    -webkit-box-shadow: inset 0 0 0 20px #0e76a8;
+    box-shadow: inset 0 0 0 20px #0e76a8
+}
+
+.social .linkedin:hover {
+    color: #0e76a8;
+    -webkit-box-shadow: inset 0 0 0 2px #0e76a8;
+    box-shadow: inset 0 0 0 2px #0e76a8
+}
+
+.social .pinterest {
+    -webkit-box-shadow: inset 0 0 0 20px #c8232c;
+    box-shadow: inset 0 0 0 20px #c8232c
+}
+
+.social .pinterest:hover {
+    color: #c8232c;
+    -webkit-box-shadow: inset 0 0 0 2px #c8232c;
+    box-shadow: inset 0 0 0 2px #c8232c
+}
+
+.social .reddit {
+    -webkit-box-shadow: inset 0 0 0 20px #5f99cf;
+    box-shadow: inset 0 0 0 20px #5f99cf
+}
+
+.social .reddit:hover {
+    color: #5f99cf;
+    -webkit-box-shadow: inset 0 0 0 2px #5f99cf;
+    box-shadow: inset 0 0 0 2px #5f99cf
+}
+
+.social .skype {
+    -webkit-box-shadow: inset 0 0 0 20px #00aff0;
+    box-shadow: inset 0 0 0 20px #00aff0
+}
+
+.social .skype:hover {
+    color: #00aff0;
+    -webkit-box-shadow: inset 0 0 0 2px #00aff0;
+    box-shadow: inset 0 0 0 2px #00aff0
+}
+
+.social .tumblr {
+    -webkit-box-shadow: inset 0 0 0 20px #35465c;
+    box-shadow: inset 0 0 0 20px #35465c
+}
+
+.social .tumblr:hover {
+    color: #35465c;
+    -webkit-box-shadow: inset 0 0 0 2px #35465c;
+    box-shadow: inset 0 0 0 2px #35465c
+}
+
+.social .vine {
+    -webkit-box-shadow: inset 0 0 0 20px #00b488;
+    box-shadow: inset 0 0 0 20px #00b488
+}
+
+.social .vine:hover {
+    color: #00b488;
+    -webkit-box-shadow: inset 0 0 0 2px #00b488;
+    box-shadow: inset 0 0 0 2px #00b488
+}
+
+.social .vk {
+    -webkit-box-shadow: inset 0 0 0 20px #45668e;
+    box-shadow: inset 0 0 0 20px #45668e
+}
+
+.social .vk:hover {
+    color: #45668e;
+    -webkit-box-shadow: inset 0 0 0 2px #45668e;
+    box-shadow: inset 0 0 0 2px #45668e
+}
+
+.social .flickr {
+    -webkit-box-shadow: inset 0 0 0 20px #ff0084;
+    box-shadow: inset 0 0 0 20px #ff0084
+}
+
+.social .flickr:hover {
+    color: #ff0084;
+    -webkit-box-shadow: inset 0 0 0 2px #ff0084;
+    box-shadow: inset 0 0 0 2px #ff0084
+}
+
+.social .stackoverflow {
+    -webkit-box-shadow: inset 0 0 0 20px #fe7a15;
+    box-shadow: inset 0 0 0 20px #fe7a15
+}
+
+.social .stackoverflow:hover {
+    color: #fe7a15;
+    -webkit-box-shadow: inset 0 0 0 2px #fe7a15;
+    box-shadow: inset 0 0 0 2px #fe7a15
+}
+
+.social .twitch {
+    -webkit-box-shadow: inset 0 0 0 20px #6441a5;
+    box-shadow: inset 0 0 0 20px #6441a5
+}
+
+.social .twitch:hover {
+    color: #6441a5;
+    -webkit-box-shadow: inset 0 0 0 2px #6441a5;
+    box-shadow: inset 0 0 0 2px #6441a5
+}
+
+.social .vimeo {
+    -webkit-box-shadow: inset 0 0 0 20px #1ab7ea;
+    box-shadow: inset 0 0 0 20px #1ab7ea
+}
+
+.social .vimeo:hover {
+    color: #1ab7ea;
+    -webkit-box-shadow: inset 0 0 0 2px #1ab7ea;
+    box-shadow: inset 0 0 0 2px #1ab7ea
+}
+
+.social .weibo {
+    -webkit-box-shadow: inset 0 0 0 20px #d72928;
+    box-shadow: inset 0 0 0 20px #d72928
+}
+
+.social .weibo:hover {
+    color: #d72928;
+    -webkit-box-shadow: inset 0 0 0 2px #d72928;
+    box-shadow: inset 0 0 0 2px #d72928
+}
+
+.social .soundcloud {
+    -webkit-box-shadow: inset 0 0 0 20px #f80;
+    box-shadow: inset 0 0 0 20px #f80
+}
+
+.social .soundcloud:hover {
+    color: #f80;
+    -webkit-box-shadow: inset 0 0 0 2px #f80;
+    box-shadow: inset 0 0 0 2px #f80
+}
+
+.social .bitbucket {
+    -webkit-box-shadow: inset 0 0 0 20px #f80;
+    box-shadow: inset 0 0 0 20px #f80
+}
+
+.social .bitbucket:hover {
+    color: #f80;
+    -webkit-box-shadow: inset 0 0 0 2px #f80;
+    box-shadow: inset 0 0 0 2px #f80
+}
+
+.social .stack-overflow {
+    -webkit-box-shadow: inset 0 0 0 20px #f80;
+    box-shadow: inset 0 0 0 20px #f80
+}
+
+.social .stack-overflow:hover {
+    color: #f80;
+    -webkit-box-shadow: inset 0 0 0 2px #f80;
+    box-shadow: inset 0 0 0 2px #f80
+}
+
+.social .renren {
+    -webkit-box-shadow: inset 0 0 0 20px #f80;
+    box-shadow: inset 0 0 0 20px #f80
+}
+
+.social .renren:hover {
+    color: #f80;
+    -webkit-box-shadow: inset 0 0 0 2px #f80;
+    box-shadow: inset 0 0 0 2px #f80
+}
+
+.social .steam {
+    -webkit-box-shadow: inset 0 0 0 20px #f80;
+    box-shadow: inset 0 0 0 20px #f80
+}
+
+.social .steam:hover {
+    color: #f80;
+    -webkit-box-shadow: inset 0 0 0 2px #f80;
+    box-shadow: inset 0 0 0 2px #f80
+}
+
+.social .qq {
+    -webkit-box-shadow: inset 0 0 0 20px #f80;
+    box-shadow: inset 0 0 0 20px #f80
+}
+
+.social .qq:hover {
+    color: #f80;
+    -webkit-box-shadow: inset 0 0 0 2px #f80;
+    box-shadow: inset 0 0 0 2px #f80
+}
+
+.social .slideshare {
+    -webkit-box-shadow: inset 0 0 0 20px #f80;
+    box-shadow: inset 0 0 0 20px #f80
+}
+
+.social .slideshare:hover {
+    color: #f80;
+    -webkit-box-shadow: inset 0 0 0 2px #f80;
+    box-shadow: inset 0 0 0 2px #f80
+}
+
+.post_item {
+	font-size: 15px;
+	border-bottom:dashed 1px gray;
+}
+
+.post_item span {
+	maragin: 5px 0px;
+	
+}

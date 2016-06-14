@@ -1,0 +1,38 @@
+<footer id="footer" class="text-center" style="padding-top:20px;">
+	  <div class="description text-left">
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ site.description }}</p>
+	  </div>
+
+	<div class="wrapper">
+		<ul class="social-media-list list-inline">
+		  {% if site.github_username %}
+		  <li>
+			{% include icon-github.html username=site.github_username %}
+		  </li>
+		  {% endif %}
+
+		  {% if site.twitter_username %}
+		  <li>
+			{% include icon-twitter.html username=site.twitter_username %}
+		  </li>
+		  {% endif %}
+		</ul>
+	  </div>
+
+	<div class="copyright">
+		<p class="main">
+			Copyright &copy; <a href="http://astro-wp.ecko.me/">Lzh</a>. 2016 &bull; All rights reserved.
+		</p>
+		<p class="alt">
+			<span class="ecko">
+				<a target="_blank" href="http://ecko.me/themes/wordpress/astro/">Jekyll Theme</a> 
+				by 
+				<a target="_blank" href="http://ecko.me">Lzh</a>.
+			</span>
+			<span class="wordpress">Published with 
+				<a target="_blank" href="http://wordpress.org">blog</a>.
+			</span>
+		</p>
+	</div>
+</footer>
+

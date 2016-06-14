@@ -1,0 +1,30 @@
+#+STARTUP: showall
+#+STARTUP: hidestars
+#+OPTIONS: H:2 num:nil tags:nil toc:1 timestamps:t
+#+BEGIN_HTML
+---
+layout: post
+title: demo1
+excerpt: 
+categories:
+  -  
+tags:
+  -  
+published: false
+---
+#+END_HTML
+
+** 
+(file-name-directory (buffer-file-name (current-buffer)))
+"d:/program/emacs-24.5/home/org-jekyll/org/_drafts/"
+(concat jekyll-directory jekyll-drafts-dir)
+"~/org-jekyll/org/_drafts/"
+(expand-file-name (concat jekyll-directory jekyll-drafts-dir))
+"d:/program/emacs-24.5/home/org-jekyll/org/_drafts/"
+
+"~/org-jekyll/org/_drafts/"
+
+"~/org-jekyll/org/_drafts/"
+
+
+

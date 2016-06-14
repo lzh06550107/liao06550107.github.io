@@ -1,0 +1,25 @@
+---
+layout: default
+header: true #不包含default模板中的header头
+footer: true #包含default模板中的footer尾
+css_from_layout: "/static/custom/css/post_list.css,/static/custom/css/side_bar.css" #该模板中需要另外包含的css头
+js_from_layout: "/static/custom/js/share.js,/static/custom/js/post_list.js"
+---
+
+<div class="container">
+	<div class="row">
+		<div id="content" class="col-md-8 clearfix">
+			<div id="post_list_conent_wrapper">	
+				{{ content }}
+			</div>
+			
+			<div id="post_list_paginate" class="pull-right">
+				<!--引入分页组件-->
+				{% include paginate.html %}
+			</div>
+		</div>
+		<div id="sidebar" class="col-md-4">
+			{% include info_sidebar.html %}
+		</div>
+	</div>
+</div>

@@ -1,0 +1,26 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--腾讯开发需要-->
+  <meta property="qc:admins" content="4557077120065501076714052617" />
+
+  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+  
+  <!--通用的css文件-->
+  <link rel="stylesheet" href='{{"/static/normalize/normalize.css"| prepend: site.baseurl }}' rel='stylesheet' type='text/css'/>
+  <link rel="stylesheet" href='{{"/static/font-awesome/css/font-awesome.min.css"| prepend: site.baseurl }}' rel='stylesheet' type='text/css'/>
+  <link rel="stylesheet" href='{{"/static/iconfont/iconfont.css"| prepend: site.baseurl }}' rel='stylesheet' type='text/css'/>
+  <!--bootstrap.css-->
+  <link rel="stylesheet" href='{{ "/static/bootstrap/css/bootstrap.min.css" | prepend: site.baseurl }}'>
+  
+  <!--特定页面引入的其它css文件-->
+  {% assign csses = layout.css_from_layout | split: "," %}
+  {% for css in csses %}
+	<link rel="stylesheet" href='{{ css | prepend: site.baseurl }}' rel='stylesheet' type='text/css'>
+  {% endfor %}
+</head>
