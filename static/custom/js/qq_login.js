@@ -75,7 +75,10 @@ function getAccessTokenByAuthorizationCode_acrossDomain(authorizationCode){
 	ifrproxy.onload = function(){
 		this.src = 'http://lzh06550107.github.io/about.html';
 		this.onload = function(){
-			return window.location.hash;
+			var accessToken = getQueryString(window.location.hash.substr(1),'Access_Token');
+			if(accessToken){ //如果存在访问令牌，则使用Access Token来获取用户的OpenID
+				getOpenIdByAccessToken(accessToken);
+			}	
 		};
 	};
     document.body.appendChild(ifrproxy);
@@ -92,11 +95,7 @@ var Request = new Object();
 Request = GetRequest(); //获取请求参数
 
 if(Request['code']){ //如果存在授权码，则通过Authorization Code获取Access Token
-	var hash = getAccessTokenByAuthorizationCode_acrossDomain(Request['code']);
-	var accessToken = getQueryString(hash,'Access_Token');
-	if(accessToken){ //如果存在访问令牌，则使用Access Token来获取用户的OpenID
-		getOpenIdByAccessToken(accessToken);
-	}	
+	getAccessTokenByAuthorizationCode_acrossDomain(Request['code']);
 }
 
 $(document).ready(function(){
