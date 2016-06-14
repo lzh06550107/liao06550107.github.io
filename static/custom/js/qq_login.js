@@ -34,7 +34,7 @@ function getAccessTokenByAuthorizationCode(authorizationCode){
 
 	var query = queryParams.join('&');
 	var url = path + query;
-	window.open(url);
+	window.location = url; //重新定位到新的url
 }
 
 //第3步骤，使用Access Token来获取用户的OpenID
@@ -57,7 +57,7 @@ function getOpenIdByAccessToken(accessToken){
 var appID = "101322571";
 var appKEY = "350fc5fa05862fa9c1716f78a264fddb";
 //成功授权后的回调地址，请改为你自己的
-var redirectURI = "http://lzh06550107.github.io/blog/";
+var redirectURI = "http://lzh06550107.github.io/blog";
 var state= 'test'; //设置状态值
 var Request = new Object(); 
 Request = GetRequest(); //获取请求参数
