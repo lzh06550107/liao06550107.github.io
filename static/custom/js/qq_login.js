@@ -1,9 +1,9 @@
 $(document).ready(function(){
-	$("#qq-login").click(function toLogin(){
-   //ÒÔÏÂÎª°´Å¥µã»÷ÊÂ¼şµÄÂß¼­¡£×¢ÒâÕâÀïÒªÖØĞÂ´ò¿ª´°¿Ú
-   //·ñÔòºóÃæÌø×ªµ½QQµÇÂ¼£¬ÊÚÈ¨Ò³ÃæÊ±»áÖ±½ÓËõĞ¡µ±Ç°ä¯ÀÀÆ÷µÄ´°¿Ú£¬¶ø²»ÊÇ´ò¿ªĞÂ´°¿Ú
+	$("#qq-login").click(function(){
+   //ä»¥ä¸‹ä¸ºæŒ‰é’®ç‚¹å‡»äº‹ä»¶çš„é€»è¾‘ã€‚æ³¨æ„è¿™é‡Œè¦é‡æ–°æ‰“å¼€çª—å£
+   //å¦åˆ™åé¢è·³è½¬åˆ°QQç™»å½•ï¼Œæˆæƒé¡µé¢æ—¶ä¼šç›´æ¥ç¼©å°å½“å‰æµè§ˆå™¨çš„çª—å£ï¼Œè€Œä¸æ˜¯æ‰“å¼€æ–°çª—å£
    var A=window.open("oauth/index.php","TencentLogin", 
    "width=450,height=320,menubar=0,scrollbars=1,
    resizable=1,status=1,titlebar=0,toolbar=0,location=1");
 }
-});
+}); 
