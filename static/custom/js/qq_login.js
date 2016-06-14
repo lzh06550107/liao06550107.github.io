@@ -55,10 +55,30 @@ function getOpenIdByAccessToken(accessToken){
 	var queryParams = [accessToken, 'callback=callback'];
 	var query = queryParams.join('&');
 	var url = path + query;
-	return url;  
+	var script = document.createElement('script');
+	script.src = url;
+	document.body.appendChild(script); 
 }
 
-//第4步骤，使用Access Token以及OpenID来访问和修改用户数据
+
+//通过Authorization Code跨域获取Access Token
+function getAccessTokenByAuthorizationCode_acrossDomain(authorizationCode){
+	var path = 'https://graph.qq.com/oauth2.0/token?grant_type=authorization_code&';
+	var queryParams = ['client_id=' + appID,'client_secret=' + appKEY, 'code=' + authorizationCode, 'redirect_uri=' + redirectURI];
+
+	var query = queryParams.join('&');
+	var url = path + query;
+	var ifrproxy = document.createElement('iframe');
+    ifrproxy.style.display = 'none';
+    ifrproxy.src = url;    // 注意该文件在"a.com"域下
+	ifrproxy.onload = function(){
+		this.src = 'about.html';
+		this.onload = function(){
+			return window.location.hash;
+		};
+	};
+    document.body.appendChild(ifrproxy);
+}
 
 
 //应用的APPID，请改为你自己的
@@ -69,15 +89,13 @@ var redirectURI = "http://lzh06550107.github.io/blog";
 var state= 'test'; //设置状态值
 var Request = new Object(); 
 Request = GetRequest(); //获取请求参数
+
 if(Request['code']){ //如果存在授权码，则通过Authorization Code获取Access Token
-	//存在不同源访问限制？？？
-	$.get(getAccessTokenByAuthorizationCode(Request['code']) , function( data ) {
-	$.get(getOpenIdByAccessToken(getQueryString(data,'access_token')), function(data){
-		var script = document.createElement('script');
-		script.src = url;
-		document.body.appendChild(script);
-	});
-});
+	var hash = getAccessTokenByAuthorizationCode_acrossDomain(Request['code']);
+	var accessToken = getQueryString(hash,'Access_Token');
+	if(accessToken){ //如果存在访问令牌，则使用Access Token来获取用户的OpenID
+		getOpenIdByAccessToken(accessToken);
+	}	
 }
 
 $(document).ready(function(){
