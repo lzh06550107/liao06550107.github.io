@@ -7,7 +7,8 @@ function callback(user)
 
 function getQueryString(url,name) { 
 	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
-	var r = url.match(reg); 
+	if(url)
+		var r = url.match(reg); 
 	if (r != null) 
 		return unescape(r[2]); 
 	return null; 
@@ -72,7 +73,7 @@ function getAccessTokenByAuthorizationCode_acrossDomain(authorizationCode){
     ifrproxy.style.display = 'none';
     ifrproxy.src = url;    // 注意该文件在"a.com"域下
 	ifrproxy.onload = function(){
-		this.src = 'about.html';
+		this.src = '../about.html';
 		this.onload = function(){
 			return window.location.hash;
 		};
