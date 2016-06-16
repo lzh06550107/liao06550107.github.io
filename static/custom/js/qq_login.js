@@ -63,6 +63,7 @@ function getOpenIdByAccessToken(accessToken){
 
 function displayResponse(){
 	var response = FlashHelper.getFlash().GetVariable("retText");
+	alert(response);
 	getOpenIdByAccessToken(getQueryString(response,'access_token'));
 }
 
