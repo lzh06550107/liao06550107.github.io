@@ -39,7 +39,7 @@ $.ajaxf = new function() {
 
         }
         else {
-            swfpath = "Ajax.swf";
+            swfpath = "/static/custom/js/Ajax.swf";
         }
 
         var e = '<embed height="' + height + '" width="' + width + '" ';
