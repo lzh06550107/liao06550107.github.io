@@ -49,8 +49,8 @@ FlashHelper.isFlashInstalled = function() {
 }
 
 FlashHelper.getFlash = function() {
-   var flash = (navigator.appName.indexOf ("Microsoft") !=-1)?window["storage"]:document["storage"];
-   //return getElements("storage");   return flash;
+   //var flash = (navigator.appName.indexOf ("Microsoft") !=-1)?window["storage"]:document["storage"];
+   return getElements("storage");
 }
 
 FlashHelper.checkFlash = function() {
