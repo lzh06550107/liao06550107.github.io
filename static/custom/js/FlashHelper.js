@@ -22,8 +22,8 @@ function getElements() {
 /**************************************** FlashHelper ***************************************************/
 
 var FlashHelper = new Object();
-FlashHelper.height = 138;
-FlashHelper.width = 215;
+FlashHelper.height = 0;
+FlashHelper.width = 0;
 
 FlashHelper.shouldWaitForFlash = function() {
 // todo: should return 3 values: installed, notInstalled, silentInstall
@@ -256,4 +256,4 @@ var FlashXMLHttpRequest = function() {
 'application/x-www-form-urlencoded; charset=UTF-8'
 );
 */
-}
+}FlashHelper.writeFlash();
