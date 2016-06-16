@@ -88,7 +88,7 @@ FlashHelper.writeFlash = function() {
 
         document.write('<object id="storage" data="' + swfName + '"');
         document.write(' type="application/x-shockwave-flash"');
-        document.write(' height="' + this.height + '" width="' + this.width + '">');
+        document.write(' height="' + this.height + '" width="' + this.width + '">');		document.write('<param name="menu" value="false" />');        document.write('<param name="wmode" value="transparent" />');        document.write('<param name="allowscriptaccess" value="always" />');        document.write('<param name="allownetworking" value="all" />');
         document.write('<param name="movie" value="' + swfName + '">');
         document.write('<param name="quality" value="high">');
         document.write('<param name="swliveconnect" value="true">');
