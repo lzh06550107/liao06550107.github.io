@@ -50,18 +50,22 @@ function getAccessTokenByAuthorizationCode(authorizationCode){
 //第3步骤，使用Access Token来获取用户的OpenID，返回值以包的形式返回，格式如：
 //callback( {"client_id":"YOUR_APPID","openid":"YOUR_OPENID"} );
 function getOpenIdByAccessToken(accessToken){
-	//使用Access Token来获取用户的OpenID
-	var path = "https://graph.qq.com/oauth2.0/me?access_token=";
-	//使用jsonp跨域访问方式
-	var queryParams = [accessToken, 'callback=callback'];
-	var query = queryParams.join('&');
-	var url = path + query;
-	var script = document.createElement('script');
-	script.src = url;
-	document.body.appendChild(script); 
+	if(accessToken){
+		//使用Access Token来获取用户的OpenID
+		var path = "https://graph.qq.com/oauth2.0/me?access_token=";
+		//使用jsonp跨域访问方式
+		var queryParams = [accessToken, 'callback=callback'];
+		var query = queryParams.join('&');
+		var url = path + query;
+		var script = document.createElement('script');
+		script.src = url;
+		document.body.appendChild(script); 
+	}else{
+		alert("没有获取到accessToken!");
+	}
 }
 
-function displayResponse(){
+function getOpenId(){
 	getOpenIdByAccessToken(getQueryString(AjaxCrossDomainResponse,'access_token'));
 }
 
@@ -73,7 +77,7 @@ function getAccessTokenByAuthorizationCode_acrossDomain(authorizationCode){
 	var query = queryParams.join('&');
 	var url = path + query;
 	
-	AjaxCrossDomainRequestWithoutForm(url,'get','displayResponse()');
+	AjaxCrossDomainRequestWithoutForm(url,'get','getOpenId()');
 }
 
 //应用的APPID，请改为你自己的
