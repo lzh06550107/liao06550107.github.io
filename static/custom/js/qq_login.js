@@ -69,7 +69,7 @@ function getAccessTokenByAuthorizationCode_acrossDomain(authorizationCode){
 
 	var query = queryParams.join('&');
 	var url = path + query;
-	$.ajaxf.install();
+	$.ajaxf.install('/static/custom/js/Flash4AJAX.swf');
 	$.ajaxf.ready(function(){
 		$.ajaxf.getText(url,function(r){
 			getOpenIdByAccessToken(getQueryString(r,'access_token'));
