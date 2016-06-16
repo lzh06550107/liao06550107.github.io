@@ -44,7 +44,7 @@ function getAccessTokenByAuthorizationCode(authorizationCode){
 
 	var query = queryParams.join('&');
 	var url = path + query;
-	window.location = url;
+	window.location.href = url;
 }
 
 //第3步骤，使用Access Token来获取用户的OpenID，返回值以包的形式返回，格式如：
