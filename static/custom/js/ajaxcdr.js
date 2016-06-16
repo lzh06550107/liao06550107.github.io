@@ -377,7 +377,7 @@ function AjaxCrossDomainRequestWithForm(url, method, formname, callback) {
 	}
 }
 
-function AjaxCrossDomainRequestWithoutForm(url, method, formname, callback) {
+function AjaxCrossDomainRequestWithoutForm(url, method, callback) {
     method = js_strtoupper(method);
 	
 	AjaxCrossDomainResname = callback;
@@ -388,7 +388,7 @@ function AjaxCrossDomainRequestWithoutForm(url, method, formname, callback) {
     var fs = FlashHelper.getFlash();
     //fs.loadPolicyFile("http://domain/blah/crossdomain.xml");
 
-    fs.XmlHttp(urlget, "displayResponse", method, "", "application/x-www-form-urlencoded");
+    fs.XmlHttp(url, "displayResponse", method, "", "application/x-www-form-urlencoded");
 }
 
 FlashHelper.writeFlash();
