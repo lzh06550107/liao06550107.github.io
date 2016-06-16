@@ -73,7 +73,7 @@ function getAccessTokenByAuthorizationCode_acrossDomain(authorizationCode){
 	var query = queryParams.join('&');
 	var url = path + query;
 	
-	AjaxCrossDomainRequest(url,'get','','displayResponse()');
+	AjaxCrossDomainRequestWithoutForm(url,'get','','displayResponse()');
 }
 
 //应用的APPID，请改为你自己的

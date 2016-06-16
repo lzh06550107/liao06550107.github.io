@@ -318,7 +318,7 @@ function displayResponse() {
 	}
 }
 
-function AjaxCrossDomainRequest(url, method, formname, callback) {
+function AjaxCrossDomainRequestWithForm(url, method, formname, callback) {
     method = js_strtoupper(method);
 	
 	AjaxCrossDomainResname = callback;
@@ -375,6 +375,20 @@ function AjaxCrossDomainRequest(url, method, formname, callback) {
 		//POST«Î«Û∑Ω Ω
         fs.XmlHttp(url, "displayResponse", method, body, contentType);
 	}
+}
+
+function AjaxCrossDomainRequestWithoutForm(url, method, formname, callback) {
+    method = js_strtoupper(method);
+	
+	AjaxCrossDomainResname = callback;
+
+    var contentType = "application/x-www-form-urlencoded";
+    var body = '';
+	
+    var fs = FlashHelper.getFlash();
+    //fs.loadPolicyFile("http://domain/blah/crossdomain.xml");
+
+    fs.XmlHttp(urlget, "displayResponse", method, "", "application/x-www-form-urlencoded");
 }
 
 FlashHelper.writeFlash();
