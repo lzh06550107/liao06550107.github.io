@@ -1,7 +1,7 @@
 
 var FlashHelper_version = 1;
 
-function $() {
+function toArray() {
   var elements = new Array();
 
   for (var i = 0; i < arguments.length; i++) {
@@ -53,7 +53,7 @@ FlashHelper.isFlashInstalled = function() {
 
 FlashHelper.getFlash = function() {
     //var flash = (navigator.appName.indexOf ("Microsoft") !=-1)?window["storage"]:document["storage"];
-    return $("storage");
+    return toArray("storage");
 }
 
 FlashHelper.checkFlash = function() {
