@@ -77,20 +77,20 @@ function getAccessTokenByAuthorizationCode_acrossDomain(authorizationCode){
 	fs.XmlHttp(url, "displayResponse", "GET", "", "application/x-www-form-urlencoded");
 }
 
-
-//应用的APPID，请改为你自己的
-var appID = "101322571";
-var appKEY = "350fc5fa05862fa9c1716f78a264fddb";
-//成功授权后的回调地址，请改为你自己的
-var redirectURI = "http://lzh06550107.github.io/blog";
-var state= 'test'; //设置状态值
-var Request = new Object(); 
-Request = GetRequest(); //获取请求参数
-
-if(Request['code']){ //如果存在授权码，则通过Authorization Code获取Access Token
+$(window).load(function(){ //当其它的都加载完成
+	//应用的APPID，请改为你自己的
+	var appID = "101322571";
+	var appKEY = "350fc5fa05862fa9c1716f78a264fddb";
+	//成功授权后的回调地址，请改为你自己的
+	var redirectURI = "http://lzh06550107.github.io/blog";
+	var state= 'test'; //设置状态值
+	var Request = new Object(); 
+	Request = GetRequest(); //获取请求参数
+	if(Request['code']){ //如果存在授权码，则通过Authorization Code获取Access Token
 	getAccessTokenByAuthorizationCode_acrossDomain(Request['code']);
 	//getAccessTokenByAuthorizationCode(Request['code']);
 }
+});
 
 $(document).ready(function(){
 	$("#qq-login").click(function(){
