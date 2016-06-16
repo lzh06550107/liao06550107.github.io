@@ -22,9 +22,6 @@ function getElements() {
 /**************************************** FlashHelper ***************************************************/
 
 var FlashHelper = new Object();
-FlashHelper.height = 0;
-FlashHelper.width = 0;
-
 FlashHelper.shouldWaitForFlash = function() {
 // todo: should return 3 values: installed, notInstalled, silentInstall
 
@@ -52,8 +49,8 @@ FlashHelper.isFlashInstalled = function() {
 }
 
 FlashHelper.getFlash = function() {
-    //var flash = (navigator.appName.indexOf ("Microsoft") !=-1)?window["storage"]:document["storage"];
-   return getElements("storage");
+   var flash = (navigator.appName.indexOf ("Microsoft") !=-1)?window["storage"]:document["storage"];
+   //return getElements("storage");   return flash;
 }
 
 FlashHelper.checkFlash = function() {
