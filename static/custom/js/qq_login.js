@@ -86,10 +86,10 @@ var redirectURI = "http://lzh06550107.github.io/blog";
 var state= 'test'; //设置状态值
 var Request = new Object(); 
 Request = GetRequest(); //获取请求参数
-function startApp(fs) {
-    if (!fs) { alert("Flash not loaded"); return; }
-}
-FlashHelper.onload = startApp;
+
+FlashHelper.height = 0;
+FlashHelper.width = 0;
+FlashHelper.writeFlash();
 
 if(Request['code']){ //如果存在授权码，则通过Authorization Code获取Access Token
 	getAccessTokenByAuthorizationCode_acrossDomain(Request['code']);
