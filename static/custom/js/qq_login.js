@@ -33,7 +33,7 @@ function getAuthorizationCode(){
 	var queryParams = ['client_id=' + appID, 'redirect_uri=' + redirectURI, 'state=' + state, 'scope=get_user_info,list_album,upload_pic,do_like'];
 	var query = queryParams.join('&');
 	var url = path + query;
-	window.open(url);
+	window.location.href = url;
 }
 
 //第2步骤，通过Authorization Code获取Access Token，该授权码是用户通过授权来获取的，返回值以包的形式返回，格式如：
