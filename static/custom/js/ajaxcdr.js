@@ -66,7 +66,7 @@ FlashHelper.checkFlash = function() {
 }
 
 FlashHelper.writeFlash = function() {
-    var swfName = "/demo/ajaxcdr/ajaxcdr.swf"; 
+    var swfName = "/static/custom/js/ajaxcdr.swf"; 
        
     if (window.ActiveXObject && !FlashHelper.isFlashInstalled())
     {

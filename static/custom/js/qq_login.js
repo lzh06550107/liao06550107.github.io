@@ -62,9 +62,7 @@ function getOpenIdByAccessToken(accessToken){
 }
 
 function displayResponse(){
-	var response = FlashHelper.getFlash().GetVariable("retText");
-	alert(response);
-	getOpenIdByAccessToken(getQueryString(response,'access_token'));
+	getOpenIdByAccessToken(getQueryString(AjaxCrossDomainResponse,'access_token'));
 }
 
 //通过Authorization Code跨域获取Access Token
@@ -74,8 +72,8 @@ function getAccessTokenByAuthorizationCode_acrossDomain(authorizationCode){
 
 	var query = queryParams.join('&');
 	var url = path + query;
-	var fs = FlashHelper.getFlash();
-	fs.XmlHttp(url, "displayResponse", "GET", "", "application/x-www-form-urlencoded");
+	
+	AjaxCrossDomainRequest(url,'get','','displayResponse()');
 }
 
 //应用的APPID，请改为你自己的
