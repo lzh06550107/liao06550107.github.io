@@ -64,7 +64,7 @@ FlashHelper.checkFlash = function() {
 
 FlashHelper.writeFlash = function() { 
     var swfName = "/static/custom/js/Flash4AJAX.swf";
-    if (!FlashHelper.isFlashInstalled()){		var flashvars = {};		var params                  =   {};		params.menu                 =   "false";		params.salign               =   "t";		params.scale                =   "noscale";		params.wmode                =   "transparent";		params.allowScriptAccess    =   "always";		var attributes              =   {};		attributes.id = "storage";		swfobject.embedSWF(swfName, "flashDiv", 0, 0, "9.0.0", "", flashvars, params, attributes);	}
+    if (!FlashHelper.isFlashInstalled()){		var flashvars = {};		var params                  =   {};		params.menu                 =   "false";		params.salign               =   "t";		params.scale                =   "noscale";		params.wmode                =   "transparent";		params.allowScriptAccess    =   "always";		var attributes              =   {};		attributes.id = "storage";		swfobject.embedSWF(swfName, "flashDiv", 100, 100, "9.0.0", "", flashvars, params, attributes);	}
 }
 
 
