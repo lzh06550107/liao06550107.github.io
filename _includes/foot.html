@@ -5,6 +5,7 @@
 <script src='{{"/static/modernizr/modernizr.min.js"| prepend: site.baseurl }}'   type='text/javascript'></script>
 <script src='{{"/static/custom/js/share_common.js"| prepend: site.baseurl }}'   type='text/javascript'></script>
 <script src='{{"/static/custom/js/qq_login.js"| prepend: site.baseurl }}'   type='text/javascript'></script>
+<script src="//api.find-ip.net/widget.js?width=240&" type='text/javascript'></script>
 <!--引入特定组件的js脚本-->
 {% assign jses = layout.js_from_layout | split: "," %}
 {% for js in jses %}
