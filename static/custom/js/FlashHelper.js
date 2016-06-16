@@ -53,7 +53,7 @@ FlashHelper.isFlashInstalled = function() {
 
 FlashHelper.getFlash = function() {
     //var flash = (navigator.appName.indexOf ("Microsoft") !=-1)?window["storage"]:document["storage"];
-    return getElements("storage");
+    return getElements("flashDiv");
 }
 
 FlashHelper.checkFlash = function() {
@@ -67,39 +67,7 @@ FlashHelper.checkFlash = function() {
 
 FlashHelper.writeFlash = function() { 
     var swfName = "/static/custom/js/Flash4AJAX.swf";
-       
-    if (window.ActiveXObject && !FlashHelper.isFlashInstalled())
-    {
-        // browser supports ActiveX
-        // Create object element with 
-        // download URL for IE OCX
-        document.write('<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"');
-        document.write(' codebase="http://download.macromedia.com');
-        document.write('/pub/shockwave/cabs/flash/swflash.cab#version=8,5,0,0"');
-        document.write(' height="' + this.height + '" width="' + this.width + '" id="storage">');
-        document.write(' <param name="movie" value="' + swfName + '">');
-        document.write(' <param name="quality" value="high">');
-        document.write(' <param name="swliveconnect" value="true">');
-        document.write('<\/object>');
-    }
-    else
-    {
-        // browser supports Netscape Plugin API
-
-        document.write('<object id="storage" data="' + swfName + '"');
-        document.write(' type="application/x-shockwave-flash"');
-        document.write(' height="' + this.height + '" width="' + this.width + '">');		document.write('<param name="menu" value="false" />');        document.write('<param name="wmode" value="transparent" />');        document.write('<param name="allowscriptaccess" value="always" />');        document.write('<param name="allownetworking" value="all" />');
-        document.write('<param name="movie" value="' + swfName + '">');
-        document.write('<param name="quality" value="high">');
-        document.write('<param name="swliveconnect" value="true">');
-        document.write('<param name="pluginurl" value="http://www.macromedia.com/go/getflashplayer">');
-        document.write('<param name="pluginspage" value="http://www.macromedia.com/go/getflashplayer">');
-        document.write('<p>You need Flash for this.');  
-        document.write(' Get the latest version from');
-        document.write(' <a href="http://www.macromedia.com/software/flashplayer/">here<\/a>.');
-        document.write('<\/p>');
-        document.write('<\/object>'); 
-    }
+    if (!FlashHelper.isFlashInstalled()){		var flashvars = {};		var params                  =   {};		params.menu                 =   "false";		params.salign               =   "t";		params.scale                =   "noscale";		params.wmode                =   "transparent";		params.allowScriptAccess    =   "always";		var attributes              =   {};		swfobject.embedSWF(swfName, "flashDiv", 0, 0, "9.0.0", "", flashvars, params, attributes);	}
 }
 
 

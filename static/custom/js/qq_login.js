@@ -73,7 +73,7 @@ function getAccessTokenByAuthorizationCode_acrossDomain(authorizationCode){
 
 	var query = queryParams.join('&');
 	var url = path + query;
-	var fs = document.getElementById("storage");
+	var fs = FlashHelper.getFlash();
 	fs.XmlHttp(url, "displayResponse", "GET", "", "application/x-www-form-urlencoded");
 }
 
