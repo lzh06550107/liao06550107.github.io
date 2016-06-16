@@ -94,12 +94,12 @@ function storageOnLoad(){ //当flash脚本加载完成才调用，如何实现�
 		getAccessTokenByAuthorizationCode_acrossDomain(Request['code']);
 		//getAccessTokenByAuthorizationCode(Request['code']);
 	}
-	alert("storageOnLoad被调用！");
+	//alert("storageOnLoad被调用！");
 }
 
 $(window).load(function(){
 	//storageOnload();
-	alert("load被调用!");
+	//alert("load被调用!");
 });
 
 $(document).ready(function(){
