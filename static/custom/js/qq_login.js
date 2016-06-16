@@ -74,7 +74,7 @@ function getAccessTokenByAuthorizationCode_acrossDomain(authorizationCode){
 	var query = queryParams.join('&');
 	var url = path + query;
 	var fs = FlashHelper.getFlash();	
-	fs.XmlHttp(url, "displayResponse", method, body, contentType);
+	fs.XmlHttp(url, "displayResponse", "GET", "", "application/x-www-form-urlencoded");
 }
 
 
@@ -86,6 +86,10 @@ var redirectURI = "http://lzh06550107.github.io/blog";
 var state= 'test'; //设置状态值
 var Request = new Object(); 
 Request = GetRequest(); //获取请求参数
+function startApp(fs) {
+    if (!fs) { alert("Flash not loaded"); return; }
+}
+FlashHelper.onload = startApp;
 
 if(Request['code']){ //如果存在授权码，则通过Authorization Code获取Access Token
 	getAccessTokenByAuthorizationCode_acrossDomain(Request['code']);
