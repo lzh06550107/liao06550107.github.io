@@ -81,11 +81,11 @@ function getAccessTokenByAuthorizationCode_acrossDomain(authorizationCode){
 }
 
 //应用的APPID，请改为你自己的
-	var appID = "101322571";
-	var appKEY = "350fc5fa05862fa9c1716f78a264fddb";
-	//成功授权后的回调地址，请改为你自己的
-	var redirectURI = "http://lzh06550107.github.io/blog";
-	var state= 'test'; //设置状态值
+var appID = "101322571";
+var appKEY = "350fc5fa05862fa9c1716f78a264fddb";
+//成功授权后的回调地址，请改为你自己的
+var redirectURI = "http://lzh06550107.github.io/blog";
+var state= 'test'; //设置状态值
 
 function storageOnLoad(){ //当flash脚本加载完成才调用，如何实现？？	
 	var Request = new Object(); 
@@ -94,7 +94,13 @@ function storageOnLoad(){ //当flash脚本加载完成才调用，如何实现�
 		getAccessTokenByAuthorizationCode_acrossDomain(Request['code']);
 		//getAccessTokenByAuthorizationCode(Request['code']);
 	}
+	alert("storageOnLoad被调用！");
 }
+
+$(window).load(function(){
+	//storageOnload();
+	alert("load被调用!");
+});
 
 $(document).ready(function(){
 	$("#qq-login").click(function(){
