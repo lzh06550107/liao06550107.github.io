@@ -63,7 +63,7 @@ function getOpenIdByAccessToken(accessToken){
 
 function displayResponse(){
 	var response = FlashHelper.getFlash().GetVariable("retText");
-	getOpenIdByAccessToken(getQueryString(response,'access_token');
+	getOpenIdByAccessToken(getQueryString(response,'access_token'));
 }
 
 //通过Authorization Code跨域获取Access Token
@@ -73,8 +73,7 @@ function getAccessTokenByAuthorizationCode_acrossDomain(authorizationCode){
 
 	var query = queryParams.join('&');
 	var url = path + query;
-	var fs = FlashHelper.getFlash();
-	
+	var fs = FlashHelper.getFlash();	
 	fs.XmlHttp(url, "displayResponse", method, body, contentType);
 }
 
