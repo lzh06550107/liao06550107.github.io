@@ -61,6 +61,10 @@ function getOpenIdByAccessToken(accessToken){
 	document.body.appendChild(script); 
 }
 
+function displayResponse(){
+	var response = FlashHelper.getFlash().GetVariable("retText");
+	getOpenIdByAccessToken(getQueryString(response,'access_token');
+}
 
 //通过Authorization Code跨域获取Access Token
 function getAccessTokenByAuthorizationCode_acrossDomain(authorizationCode){
@@ -69,12 +73,9 @@ function getAccessTokenByAuthorizationCode_acrossDomain(authorizationCode){
 
 	var query = queryParams.join('&');
 	var url = path + query;
-	$.ajaxf.install('/static/custom/js/Flash4AJAX.swf');
-	$.ajaxf.ready(function(){
-		$.ajaxf.getText(url,function(r){
-			getOpenIdByAccessToken(getQueryString(r,'access_token'));
-		});
-	});
+	var fs = FlashHelper.getFlash();
+	
+	fs.XmlHttp(url, "displayResponse", method, body, contentType);
 }
 
 
