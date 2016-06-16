@@ -71,11 +71,10 @@ function getAccessTokenByAuthorizationCode_acrossDomain(authorizationCode){
 	var url = path + query;
 	$.ajaxf.install();
 	$.ajaxf.ready(function(){
-			$.ajaxf.getText(url,function(r){
-				getOpenIdByAccessToken(getQueryString(r,'access_token'));
-			}
+		$.ajaxf.getText(url,function(r){
+			getOpenIdByAccessToken(getQueryString(r,'access_token'));
 		});
-	);
+	});
 }
 
 
