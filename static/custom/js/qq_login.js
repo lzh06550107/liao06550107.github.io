@@ -76,7 +76,7 @@ function getOpenIdByAccessToken(accessToken){
 */
 //该函数被flash中的函数调用
 function getUserInfo() {
-	var userInfo = AjaxCrossDomainResponse;
+	var userInfo = eval ("(" + AjaxCrossDomainResponse + ")");;
 	var userName = document.getElementById('userName');
 	var greetingText = document.createTextNode('Greetings, '+ userInfo.nickname + '.');
 	userName.appendChild(greetingText);
