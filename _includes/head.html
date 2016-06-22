@@ -17,7 +17,7 @@
   <link rel="stylesheet" href='{{"/static/iconfont/iconfont.css"| prepend: site.baseurl }}' rel='stylesheet' type='text/css'/>
   <!--bootstrap.css-->
   <link rel="stylesheet" href='{{ "/static/bootstrap/css/bootstrap.min.css" | prepend: site.baseurl }}'>
-
+  <link rel="stylesheet" href='{{ "/static/custom/css/common.css" | prepend: site.baseurl }}'>
   <!--特定页面引入的其它css文件-->
   {% assign csses = layout.css_from_layout | split: "," %}
   {% for css in csses %}

@@ -1,0 +1,6 @@
+﻿/* 分享和返回顶部*/
+.scrollDiv { z-index:20000; bottom: 50px; padding: 0 3px; left:50%; margin-left:502px; position:fixed; _position:absolute }
+.scrollDiv-resize {margin-left: 444px; }
+.scrollDiv .sd_toTop { display: none; background:url(../img/go-to-top.png) 0 -100px no-repeat; height: 56px; width: 80px; margin-bottom: 2px; line-height: 200px; overflow: hidden; cursor: pointer;}
+
+.scrollDiv .sd_toTop:hover { background-position:-100px -100px; filter:Alpha(Opacity=80); opacity:0.8; }

@@ -1,9 +1,0 @@
-﻿/*index页面*/
-#header h1 a:link {
-	border-bottom: solid 1px gray;
-}
-#header h1 a:hover {
-	font-size: 150%;
-	color: red;
-	border-bottom: none;
-}
