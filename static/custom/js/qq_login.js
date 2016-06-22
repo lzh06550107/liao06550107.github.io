@@ -1,8 +1,11 @@
-function callback(user) 
-{
-  var userName = document.getElementById('userName');
-  var greetingText = document.createTextNode('Greetings, '+ user.openid + '.');
-  userName.appendChild(greetingText);
+function callback(user) {
+	var userInfo;
+	if(user) {
+		userInfo = getUserInfoByAccessToken_acrossDomain(user.openid);
+	}
+	var userName = document.getElementById('userName');
+	var greetingText = document.createTextNode('Greetings, '+ user.nickname + '.');
+	userName.appendChild(greetingText);
 }
 
 function getQueryString(url,name) { 
@@ -36,7 +39,7 @@ function getAuthorizationCode(){
 	window.location.href = url;
 }
 
-//第2步骤，通过Authorization Code获取Access Token，该授权码是用户通过授权来获取的，返回值以包的形式返回，格式如：
+//第2步骤，通过Authorization Code获取Access Token，该授权码是用户通过授权来获取的，返回值以响应文本内容的形式返回，格式如：
 //access_token=9244AA2E9F09D13A5EC23DE09C85721D&expires_in=7776000&refresh_token=8EAAC59C5D6510B5CAF3AE38EF47C6EB,注意不会重定向到指定的url。
 function getAccessTokenByAuthorizationCode(authorizationCode){
 	var path = 'https://graph.qq.com/oauth2.0/token?grant_type=authorization_code&';
@@ -47,7 +50,7 @@ function getAccessTokenByAuthorizationCode(authorizationCode){
 	window.location.href = url;
 }
 
-//第3步骤，使用Access Token来获取用户的OpenID，返回值以包的形式返回，格式如：
+//第3步骤，使用Access Token来获取用户的OpenID，返回值以JSONP的形式返回，格式如：
 //callback( {"client_id":"YOUR_APPID","openid":"YOUR_OPENID"} );
 function getOpenIdByAccessToken(accessToken){
 	if(accessToken){
@@ -65,8 +68,33 @@ function getOpenIdByAccessToken(accessToken){
 	}
 }
 
+//第4步骤，使用OpenID来获取用户的信息，返回值以JSON的形式返回，格式如下：
+/*
+{
+  "ret":0,
+   "msg":"",
+   "nickname":"YOUR_NICK_NAME",
+   ...
+}
+*/
+//该函数被flash中的函数调用
+function getUserInfo() {
+	return AjaxCrossDomainResponse;
+}
+
+function getUserInfoByAccessToken_acrossDomain(openId) {
+	var path = 'https://graph.qq.com/user/get_user_info?';
+	var queryParams = ['openid=' + openId,'access_token=' + accessToken, 'oauth_consumer_key=' + appID];
+	var query = queryParams.join('&');
+	var url = path + query;
+	
+	AjaxCrossDomainRequestWithoutForm(url,'get','getUserInfo()');
+}
+
+//该函数被flash中的函数调用
 function getOpenId(){
-	getOpenIdByAccessToken(getQueryString(AjaxCrossDomainResponse,'access_token'));
+	accessToken = getQueryString(AjaxCrossDomainResponse,'access_token');
+	getOpenIdByAccessToken(accessToken);
 }
 
 //通过Authorization Code跨域获取Access Token
@@ -83,6 +111,7 @@ function getAccessTokenByAuthorizationCode_acrossDomain(authorizationCode){
 //应用的APPID，请改为你自己的
 var appID = "101322571";
 var appKEY = "350fc5fa05862fa9c1716f78a264fddb";
+var accessToken;
 //成功授权后的回调地址，请改为你自己的
 var redirectURI = "http://lzh06550107.github.io/blog";
 var state= 'test'; //设置状态值
