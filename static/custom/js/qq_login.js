@@ -1,11 +1,8 @@
 function callback(user) {
-	var userInfo;
 	if(user) {
-		userInfo = getUserInfoByAccessToken_acrossDomain(user.openid);
+		getUserInfoByAccessToken_acrossDomain(user.openid);
 	}
-	var userName = document.getElementById('userName');
-	var greetingText = document.createTextNode('Greetings, '+ userInfo.nickname + '.');
-	userName.appendChild(greetingText);
+	
 }
 
 function getQueryString(url,name) { 
@@ -79,7 +76,10 @@ function getOpenIdByAccessToken(accessToken){
 */
 //该函数被flash中的函数调用
 function getUserInfo() {
-	return AjaxCrossDomainResponse;
+	var userInfo = AjaxCrossDomainResponse;
+	var userName = document.getElementById('userName');
+	var greetingText = document.createTextNode('Greetings, '+ userInfo.nickname + '.');
+	userName.appendChild(greetingText);
 }
 
 function getUserInfoByAccessToken_acrossDomain(openId) {
