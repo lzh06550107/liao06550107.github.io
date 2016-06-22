@@ -4,7 +4,7 @@ function callback(user) {
 		userInfo = getUserInfoByAccessToken_acrossDomain(user.openid);
 	}
 	var userName = document.getElementById('userName');
-	var greetingText = document.createTextNode('Greetings, '+ user.nickname + '.');
+	var greetingText = document.createTextNode('Greetings, '+ userInfo.nickname + '.');
 	userName.appendChild(greetingText);
 }
 
